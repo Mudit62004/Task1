@@ -1,27 +1,35 @@
-import React from 'react'
-import {NavLink} from 'react-router-dom'
-import navItems from '../constants/FooterConstant'
+import React, { useState } from "react";
+import { HomeIcon, SearchIcon, TicketIcon, UserIcon } from "@heroicons/react/outline";
 
 const Footer = () => {
+  const [active, setActive] = useState("home");
+  const tabs = [
+    { name: "Home", icon: HomeIcon, key: "home" },
+    { name: "Search", icon: SearchIcon, key: "search" },
+    { name: "Orders", icon: TicketIcon, key: "orders" },
+    { name: "Profile", icon: UserIcon, key: "profile" },
+  ];
+
   return (
-    <footer className="w-full bg-white shadow fixed bottom-0 left-0 z-50 border-t">
-      <nav className="flex items-center justify-between px-6 py-2">
-        {navItems.map(({ to, label, icon, activeClass }) => (
-          <NavLink
-            to={to}
-            className={({ isActive }) =>
-              `flex flex-col items-center text-xs font-semibold text-gray-500 hover:text-red-600 transition ${isActive ? activeClass || "text-red-600" : ""}`
-            }
-            key={label}
-            end
-          >
-            <div>{icon}</div>
-            <span className="mt-1">{label}</span>
-          </NavLink>
-        ))}
+    <footer className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md">
+      <nav className="flex justify-around items-center py-2">
+        {tabs.map((tab) => {
+          const Icon = tab.icon;
+          const isActive = active === tab.key;
+          return (
+            <button
+              key={tab.key}
+              onClick={() => setActive(tab.key)}
+              className="flex flex-col items-center text-sm space-y-1 focus:outline-none"
+            >
+              <Icon className={`h-6 w-6 ${isActive ? "text-red-600" : "text-gray-400"}`} />
+              <span className={`${isActive ? "text-red-600" : "text-gray-500"}`}>{tab.name}</span>
+            </button>
+          );
+        })}
       </nav>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;
