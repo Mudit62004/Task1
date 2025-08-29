@@ -1,10 +1,10 @@
 import React from 'react'
 import Dashimg1 from '../images/dashimg1.png'
-// import { products } from '../constants/DashComponents'
+import { newLanunch } from '../constants/index.js'
 
 const DashMainContent = () => {
   return (
-    <div className="bg-white min-h-screen px-4 pb-6">
+    <div className="bg-gray-200 min-h-screen px-4 pb-6 ">
        <section className="mt-5">
         <h2 className="text-lg font-bold mb-1">Collect contest</h2>
         <p className="text-gray-500 text-sm mb-3">Participate and win amazing prices</p>
@@ -13,28 +13,20 @@ const DashMainContent = () => {
         </div>
       </section>
       {/* Newly Launched */}
-      {/* <section className="mt-8">
+       <section className="mt-8">
         <h2 className="text-lg font-bold mb-3">Newly launched</h2>
         <div className="flex gap-3 overflow-x-auto pb-2">
-          {products.map((item, idx) => (
-            <div
-              key={idx}
-              className={`flex-shrink-0 w-36 rounded-xl shadow ${item.bg} p-2 flex flex-col items-center`}
-            >
-              <img src={item.img} alt={item.name} className="h-16 mb-3 object-contain" />
-              <span className={`font-extrabold text-xs ${item.text} mb-1`}>{item.name}</span>
-              <span className="text-black text-sm font-semibold mb-1">Just at {item.price}</span>
-              <button className="bg-yellow-400 text-black py-1 px-2 rounded font-semibold text-xs">{item.button}</button>
+          {newLanunch.map((item, index) => (
+            <div key={index} className="min-w-[120px] h-32 bg-white rounded-lg flex-shrink-0 flex items-center justify-center">
+              <img src={item.imgPath} alt={`New Launch ${index + 1}`} className="h-35" />
             </div>
           ))}
         </div>
-      </section> */}
+      </section> 
       
-      {/* <footer className="mt-10 flex flex-col items-center">
-        <img src={IMAGES.MCD_LOGO} alt="McDonald's" className="h-12 mb-2" />
-        <div className="font-bold text-yellow-500 text-2xl">I'm Lovin' It</div>
-        <div className="text-xs text-gray-400 mt-1">DESIGNED BY UX.ALOK</div>
-      </footer> */}
+       <footer className="w-full flex flex-col items-center mt-10 pb-4">
+        <img src="../public/images/dashMac.png" alt="hi" />
+      </footer> 
     </div>
   )
 }

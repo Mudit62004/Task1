@@ -11,7 +11,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md">
+    <footer className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-md mb-7">
       <nav className="flex justify-around items-center py-2">
         {tabs.map((tab) => {
           const Icon = tab.icon;
