@@ -24,7 +24,7 @@ const DashMainContent = () => {
         </div>
       </section> 
       
-       <footer className="w-full flex flex-col items-center mt-10 pb-4">
+       <footer className="w-full flex flex-col items-center mt-10 pb-3">
         <img src="../public/images/dashMac.png" alt="hi" />
       </footer> 
     </div>
