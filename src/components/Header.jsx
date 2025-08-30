@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-between pt-7 px-5 bg-white">
+    <div className="flex items-center justify-between pt-5 px-5 bg-white">
       <div>
         <div className="flex items-center font-semibold text-base text-gray-800">
           Delivery <span className="ml-2 text-base">▼</span>
